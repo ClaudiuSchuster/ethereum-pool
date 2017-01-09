@@ -9,7 +9,7 @@ import (
 	"errors"
 	"time"
 
-	"github.com/icemining/ethereum-pool/util"
+	"github.com/sammy007/open-ethereum-pool/util"
 	"math/rand"
 	"strings"
 )
