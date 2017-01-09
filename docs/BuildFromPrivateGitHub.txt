@@ -1,0 +1,23 @@
+$ git config --global url."git@github.com:".insteadOf "https://github.com/"
+$ cat ~/.gitconfig
+
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+        name = icemining
+        email = mail@icemining.io
+[url "git@github.com:"]
+        insteadOf = https://github.com/
+
+$ go get github.com/private/repo && echo Success!
+Success!
+
+
+
+
+
+An alternative to using git@github.com is to generate a personal access token on your GitHub account, grant it repo access, and then use the following instead:
+
+git config --global url."https://${GITHUB_TOKEN}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
+
+That should still work with go get -u, and also works with Docker builds (my particular use case, and how I came across your gist).
