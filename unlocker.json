@@ -1,0 +1,119 @@
+{
+	"threads": 1,
+	"coin": "eth",
+	"name": "eu2unlocker",
+
+	"proxy": {
+		"enabled": false,
+		"listen": "0.0.0.0:5555",
+		"limitHeadersSize": 1024,
+		"limitBodySize": 256,
+		"behindReverseProxy": false,
+		"blockRefreshInterval": "40ms",
+		"stateUpdateInterval": "3s",
+		"difficulty": 11000000000,
+		"hashrateExpiration": "3h",
+
+		"healthCheck": true,
+		"maxFails": 100,
+
+		"stratum": {
+			"enabled": false,
+			"listen": "0.0.0.0:4444",
+			"timeout": "120s",
+			"maxConn": 8192
+		},
+
+		"policy": {
+			"workers": 8,
+			"resetInterval": "60m",
+			"refreshInterval": "1m",
+
+			"banning": {
+				"enabled": false,
+				"ipset": "blacklist",
+				"timeout": 1800,
+				"invalidPercent": 30,
+				"checkThreshold": 30,
+				"malformedLimit": 5
+			},
+			"limits": {
+				"enabled": false,
+				"limit": 30,
+				"grace": "5m",
+				"limitJump": 10
+			}
+		}
+	},
+
+	"api": {
+		"enabled": false,
+		"purgeOnly": false,
+		"purgeInterval": "10m",
+		"listen": "0.0.0.0:8000",
+		"statsCollectInterval": "5s",
+		"hashrateWindow": "30m",
+		"hashrateLargeWindow": "3h",
+		"luckWindow": [64, 128, 256],
+		"payments": 30,
+		"blocks": 50
+	},
+
+	"upstreamCheckInterval": "2s",
+	"upstream": [
+		{
+			"name": "EU2P - 127.0.0.1:8545 / 138.201.227.73",
+			"url": "http://127.0.0.1:8545",
+			"timeout": "5s"
+		},
+		{
+                        "name": "EU1P - 10.8.0.6:8545 / 88.99.69.38",
+                        "url": "http://10.8.0.6:8545",
+                        "timeout": "5s"
+                },
+		{
+                        "name": "EU2G - 127.0.0.1:8555 / 138.201.227.122",
+                        "url": "http://127.0.0.1:8555",
+                        "timeout": "5s"
+                }
+	],
+
+	"redis": {
+		"endpoint": "10.8.0.6:6379",
+		"poolSize": 10,
+		"database": 0,
+		"password": ""
+	},
+
+	"unlocker": {
+		"enabled": true,
+		"poolFee": 1.0,
+		"poolFeeAddress": "",
+		"donate": true,
+		"depth": 120,
+		"immatureDepth": 20,
+		"keepTxFees": false,
+		"interval": "10m",
+		"daemon": "http://127.0.0.1:8555",
+		"timeout": "10s"
+	},
+
+	"payouts": {
+		"enabled": false,
+		"requirePeers": 20,
+		"interval": "120m",
+		"daemon": "http://127.0.0.1:8555",
+		"timeout": "10s",
+		"address": "0xF12CF342CfE295260eFFD2e62C838A13C803f012",
+		"gas": "21000",
+		"gasPrice": "50000000000",
+		"autoGas": true,
+		"threshold": 500000000,
+		"bgsave": false
+	},
+
+	"newrelicEnabled": false,
+	"newrelicName": "MyEtherProxy",
+	"newrelicKey": "SECRET_KEY",
+	"newrelicVerbose": false
+}
