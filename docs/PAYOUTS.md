@@ -116,6 +116,10 @@ ZADD "eth:payments:all" 1462920526 0xe670ec64341771606e55d6b4ca35a1a6b75ee3d5145
 ZADD "eth:payments:0xb85150eb365e7df0941f0cf08235f987ba91506a" 1462920526 0xe670ec64341771606e55d6b4ca35a1a6b75ee3d5145a99d05921026d1527331:25000000
 ```
 
+```
+HIncrBy "eth:miners:0xb85150eb365e7df0941f0cf08235f987ba91506a" "paid" 25000000
+```
+
 ### Delete Erroneous Payment Entry
 
 ```

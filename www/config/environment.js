@@ -15,19 +15,20 @@ module.exports = function(environment) {
 
     APP: {
       // API host and port
-      ApiUrl: '//example.net/',
+      ApiUrl: '//api.eth.icemining.io/',
 
       // HTTP mining endpoint
-      HttpHost: 'http://example.net',
-      HttpPort: 8888,
+      HttpHost: 'http://eu2.eth.icemining.io',
+      HttpPort: 5555,
 
       // Stratum mining endpoint
-      StratumHost: 'example.net',
-      StratumPort: 8008,
+      StratumHost: 'eu2.eth.icemining.io',
+      StratumPort: 4444,
 
       // Fee and payout details
-      PoolFee: '1%',
+      PoolFee: '1.00 %',
       PayoutThreshold: '0.5 Ether',
+      PayoutCycle: 'hourly',
 
       // For network hashrate (change for your favourite fork)
       BlockTime: 14.4
@@ -38,7 +39,7 @@ module.exports = function(environment) {
     /* Override ApiUrl just for development, while you are customizing
       frontend markup and css theme on your workstation.
     */
-    ENV.APP.ApiUrl = 'http://localhost:8080/'
+    ENV.APP.ApiUrl = 'http://api.eth.icemining.io:8000/'
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;

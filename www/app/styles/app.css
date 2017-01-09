@@ -97,7 +97,29 @@ code {
 	color: #ffffff;
 }
 
+.indentl {
+    margin-left:  60px;
+}
+.indentr {
+    margin-right: 60px;
+}
+.indentb {
+    margin-left:  60px;
+    margin-right: 60px;
+}
+
 @media (max-width: 767px) {
+    .indentl {
+        margin-left:  0px;
+    }
+    .indentr {
+        margin-right: 0px;
+    }
+    .indentb {
+        margin-left:  0px;
+        margin-right: 0px;
+    }
+
 	.navbar-default .navbar-nav .open .dropdown-menu > li > a {
 		color: #dadada;
 	}
@@ -108,6 +130,11 @@ code {
 		color: #ffffff;
 		background-color: #0a6c9d;
 	}
+}
+
+h1.title {
+    font-size: 24px;
+    margin: 8px 0 8px 0;
 }
 
 span.logo-1 {
@@ -131,10 +158,44 @@ span.logo-3 {
 }
 
 .note {
-	margin: 0 0 20px 0;
+	margin-top: 30px;
+	/* margin: 0 0 18px 0; */
 	padding: 15px 30px 15px 15px;
 	border-left: 5px solid #eee;
+	border-right: 5px solid #eee;
 	border-radius: 5px;
+}
+
+.smallnote {
+	margin: 0 0 0 0;
+	padding: 5px 30px 5px 5px;
+	border-left: 5px solid #eee;
+	border-right: 5px solid #eee;
+	border-radius: 2px;
+}
+.code-code {
+	background-color: #FFFFFF;
+	border-color: #57b5e3;
+}
+
+.smallnotebg {
+	border-radius: 5px;
+    /* color: #000 !important; */
+    /* margin: 20px 0; */
+    /* margin-top: 20px; */
+    margin-bottom: 20px;
+    background-color: #f1f1f1;
+    padding: 0.01em 16px;
+    padding-top: 12px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    box-sizing: inherit;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12) !important;
+}
+.smallnotebg h4 {
+	margin-top: 0;
+    font-size: 16px;
 }
 
 .note-info {
@@ -146,6 +207,7 @@ span.logo-3 {
 	background-color: #ff9999;
 	border-color: #ff0000;
 }
+
 
 h4.note {
 	margin-top: 0;
