@@ -4,6 +4,7 @@
     
   <strong>Total payments sent:</strong> <span class="label label-info">{{model.paymentsTotal}}</span>
   <h4>Latest Payouts</h4>
+  {{format-date-locale lastPayment.timestamp}}
   </div>
 </div>
 <div class="container">
