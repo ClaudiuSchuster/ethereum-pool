@@ -11,7 +11,7 @@
 		"behindReverseProxy": false,
 		"blockRefreshInterval": "120ms",
 		"stateUpdateInterval": "3s",
-                "difficulty": 11000000000,
+                "difficulty": 13000000000,
 		"hashrateExpiration": "3h",
 
 		"healthCheck": true,
@@ -62,15 +62,16 @@
 	"upstreamCheckInterval": "2s",
 	"upstream": [
 		{
+                        "name": "EU2P - 127.0.0.1:8545 / 138.201.227.73",
+                        "url": "http://127.0.0.1:8545",
+                        "timeout": "5s"
+                },
+
+		{
                         "name": "EU1P - 10.8.0.6:8545 / 88.99.69.38",
                         "url": "http://10.8.0.6:8545",
                         "timeout": "5s"
-                },
-		{
-			"name": "EU2P - 127.0.0.1:8545 / 138.201.227.73",
-			"url": "http://127.0.0.1:8545",
-			"timeout": "5s"
-		}
+                }
 	],
 
 	"redis": {
