@@ -172,6 +172,7 @@ func (s *ApiServer) StatsIndex(w http.ResponseWriter, r *http.Request) {
 		reply["maturedTotal"] = stats["maturedTotal"]
 		reply["immatureTotal"] = stats["immatureTotal"]
 		reply["candidatesTotal"] = stats["candidatesTotal"]
+		reply["paymentsTotal"] = stats["paymentsTotal"]
 	}
 
 	err = json.NewEncoder(w).Encode(reply)
