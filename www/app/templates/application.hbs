@@ -33,8 +33,17 @@
         {{#active-li currentWhen='payments'}}
           {{#link-to 'payments'}}
             <i class="fa fa-paper-plane-o"></i> Payments
+            {{#if payments.model.paymentsTotal}}
+              <span class="badge alert-success">{{payments.model.paymentsTotal}}</span>
+            {{/if}}
+            {{#if stats.model.paymentsTotal}}
+              <span class="badge alert-success">{{stats.model.paymentsTotal}}</span>
+            {{/if}}
             {{#if model.paymentsTotal}}
               <span class="badge alert-success">{{model.paymentsTotal}}</span>
+            {{/if}}
+            {{#if paymentsTotal}}
+              <span class="badge alert-success">{{paymentsTotal}}</span>
             {{/if}}
           {{/link-to}}
         {{/active-li}}
