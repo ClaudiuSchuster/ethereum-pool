@@ -25,19 +25,25 @@
         {{#active-li currentWhen='blocks'}}
           {{#link-to 'blocks'}}
             <i class="fa fa-cubes"></i> Pool Blocks
-            {{#if immatureTotal}}
-              <span class="badge alert-success">{{immatureTotal}}</span>
+            {{#if model.maturedTotal}}
+              <span class="badge alert-success">{{model.maturedTotal}}</span>
             {{/if}}
           {{/link-to}}
         {{/active-li}}
         {{#active-li currentWhen='payments'}}
           {{#link-to 'payments'}}
             <i class="fa fa-paper-plane-o"></i> Payments
+            {{#if model.paymentsTotal}}
+              <span class="badge alert-success">{{model.paymentsTotal}}</span>
+            {{/if}}
           {{/link-to}}
         {{/active-li}}
         {{#active-li currentWhen='miners'}}
           {{#link-to 'miners'}}
             <i class="fa fa-users"></i> Miners
+            {{#if model.minersTotal}}
+              <span class="badge alert-success">{{model.minersTotal}}</span>
+            {{/if}}
           {{/link-to}}
         {{/active-li}}
 <!--         {{#active-li currentWhen='about'}} -->
@@ -52,3 +58,4 @@
 </div>
 
 {{outlet}}
+

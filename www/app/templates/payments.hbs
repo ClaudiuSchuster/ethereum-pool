@@ -1,19 +1,14 @@
-<div class="jumbotron">
-  <div class="container">
-    <p class="lead">Pool always pay tx fees from it's own pocket for now.</p>
-    <strong>Total payments sent:</strong> <span class="label label-info">{{model.paymentsTotal}}</span>
-  </div>
-</div>
-<div class="container">
+<div class="container" style="margin-top:50px;">
   {{#if model.payments}}
-  <h4>Latest Payouts</h4>
   <table class="table table-condensed table-striped">
     <thead>
       <tr>
         <th>Time</th>
         <th>Amount</th>
         <th>Address</th>
-        <th>Tx ID</th>
+        <th>Tx ID
+         <span style="margin-left:20px;"> / Total: {{model.paymentsTotal}} </span>
+        </th>
       </tr>
     </thead>
     <tbody>
@@ -22,7 +17,7 @@
           <td>{{format-date-locale tx.timestamp}}</td>
           <td>{{format-number tx.formatAmount}}</td>
           <td>
-            <a href="https://etherscan.io/address/{{tx.address}}" class="hash" rel="nofollow" target="_blank">{{tx.address}}</a>
+            <a href="https://etherscan.io/address/{{tx.address}}" class="hash" rel="nofollow" target="_blank">{{format-addr tx.address}}</a>
           </td>
           <td>
             <a href="https://etherscan.io/tx/{{tx.tx}}" class="hash" rel="nofollow" target="_blank">{{format-tx tx.tx}}</a>
