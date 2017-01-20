@@ -123,8 +123,10 @@ HIncrBy "eth:miners:0xb85150eb365e7df0941f0cf08235f987ba91506a" "paid" 25000000
 ### Delete Erroneous Payment Entry
 
 ```
-ZREM "eth:payments:pending" "0xb85150eb365e7df0941f0cf08235f987ba91506a:25000000"
+FALSCH (glaub ich): ZREM "eth:payments:pending" "0xb85150eb365e7df0941f0cf08235f987ba91506a:25000000"
 ```
+RICHTIG: HINCRBY "eth:miners:0xb85150eb365e7df0941f0cf08235f987ba91506a" "pending" -25000000
+
 
 ### Update Internal Stats
 
