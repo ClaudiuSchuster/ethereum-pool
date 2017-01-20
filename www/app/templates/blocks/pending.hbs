@@ -1,5 +1,5 @@
 {{#if model.candidates}}
-<h4>Recently Found Blocks</h4>
+<br/>
 <table class="table table-condensed table-striped">
   <thead>
     <tr>
@@ -25,5 +25,12 @@
   </tbody>
 </table>
 {{else}}
-<h3>No new blocks yet</h3>
+    <br/>
+    <table class="table-condensed table-striped">
+      <thead>
+        <tr>
+          <th>No recently found blocks yet</th>
+        </tr>
+      </thead>
+    </table>
 {{/if}}
