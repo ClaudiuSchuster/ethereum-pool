@@ -18,11 +18,11 @@ module.exports = function(environment) {
       ApiUrl: '//api.eth.icemining.io/',
 
       // HTTP mining endpoint
-      HttpHost: 'http://eu2.eth.icemining.io',
+      HttpHost: 'http://eu.eth.icemining.io',
       HttpPort: 5555,
 
       // Stratum mining endpoint
-      StratumHost: 'eu2.eth.icemining.io',
+      StratumHost: 'eu.eth.icemining.io',
       StratumPort: 4444,
 
       // Fee and payout details
