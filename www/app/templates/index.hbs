@@ -6,7 +6,6 @@
           <strong>Welcome to icemining, your high performance Ethereum mining pool.</strong>
         </h1>
         Mine all Ethereum rewards (Blocks, Uncles, Fees) with our efficient mining engine on our high available global mining network.<br/>
-<!--         <strong>Min. payout threshold: {{config.PayoutThreshold}}</strong>, Autopayout every hour.<br/> -->
       </div>
       <div class="col-md-3 stats">
         <div><i class="fa fa-users"></i> Miners Online: <span id="poolHashrate">{{format-number stats.model.minersTotal}}</span></div>
@@ -50,7 +49,7 @@
   
  
   <h4 class="note note-info text-center">
-    Start Mining with Genoil's Miner (Stratum Mode & Failover)
+    Start Mining with Genoil's Miner (Stratum Mode)
   </h4>
   <p class="lead indentl">
     Download and install / unpack Genoil's Miner 
@@ -73,11 +72,11 @@
     </h4>
     Windows: <br/>
     <div class="smallnote code-code">
-          ethminer.exe --farm-recheck 200 -G -SP 1 -S {{config.StratumHost}}:{{config.StratumPort}} -FS eu2.eth.icemining.io:{{config.StratumPort}} -O <strong>&lt;YOUR_ETH_ADDRESS&gt;.&lt;RIG_ID&gt;</strong>
+          ethminer.exe --farm-recheck 200 -G -SP 1 -S {{config.StratumHost}}:{{config.StratumPort}} -O <strong>&lt;YOUR_ETH_ADDRESS&gt;.&lt;RIG_ID&gt;</strong>
     </div>
     Linux: <br/>
     <div class="smallnote code-code">
-          ./ethminer --farm-recheck 200 -G -SP 1 -S {{config.StratumHost}}:{{config.StratumPort}} -FS eu2.eth.icemining.io:{{config.StratumPort}} -O <strong>&lt;YOUR_ETH_ADDRESS&gt;.&lt;RIG_ID&gt;</strong>
+          ./ethminer --farm-recheck 200 -G -SP 1 -S {{config.StratumHost}}:{{config.StratumPort}} -O <strong>&lt;YOUR_ETH_ADDRESS&gt;.&lt;RIG_ID&gt;</strong>
     </div>
   </div>
     
@@ -154,79 +153,10 @@
   <br/>
 
     
-    
-    
-  <h4 class="note note-info text-center">
-    Advanced: Start Mining with Claymore's Miner (Stratum Mode & Failover)
-  </h4>
-  <p class="lead indentl">
-    Download and install / unpack Claymore's Miner 
-     <ul style="list-style-type:square">
-      <li>
-        <a href="http://bitcointalk.org/index.php?topic=1433925.0" rel="nofollow" target="_blank"> Bitcointalk Thread</a>
-      </li>
-     </ul> 
-  </p>
-  
-  <div class="smallnotebg indentb">
-    <h4>
-      Edit <code>epools.txt</code> in miner directory and insert <code>our pool-configuration</code> and your <code>WALLET</code> and <code>RIG_ID</code>:
-    </h4>
-    <div class="smallnote code-code">
-      ##### MAIN-POOL - eu1.eth.icemining.io:4444 <br/>
-      POOL: eu2.eth.icemining.io:4444, WALLET: <strong>&lt;YOUR_ETH_ADDRESS&gt;</strong>, WORKER: <strong>&lt;RIG_ID&gt;</strong>, PSW: x, ESM: 0, ALLPOOLS: 0 <br/>
-      ##### FAILOVER-POOL - eu2.eth.icemining.io:4444 <br/>
-      POOL: eu1.eth.icemining.io:4444, WALLET: <strong>&lt;YOUR_ETH_ADDRESS&gt;</strong>, WORKER: <strong>&lt;RIG_ID&gt;</strong>, PSW: x, ESM: 0, ALLPOOLS: 0 <br/>
-    </div>
-  </div>
-  
-  <dl class="dl-horizontal indentb">
-    <dt>YOUR_ETH_ADDRESS</dt>
-    <dd>This is your address for payouts, generate one with geth, or mine directly to exchange like
-      <a href="http://poloniex.com" rel="nofollow" target="_blank">Poloniex</a>
-      or <a href="http://bittrex.com" rel="nofollow" target="_blank">Bittrex</a>.<br/>
-      <strong>Example:</strong> <code>0xF12CF342CfE295260eFFD2e62C838A13C803f012</code>
-    </dd>
-    <dt>RIG_ID</dt>
-    <dd>
-      ID of your farm to distinguish it from your other rig. If you have just one rig, feel free to omit this param.
-      This param must be short alphanumeric string with optional dashes and underscores.<br/>
-      <strong>Example:</strong> <code>rig-1</code>
-    </dd>
-  </dl>
-  
-  <p class="indentb">
-    <strong>Full example:</strong> <br/>
-    <code>
-		##### MAIN-POOL - eu1.eth.icemining.io:4444 <br/>
-        POOL: eu2.eth.icemining.io:4444, WALLET: 0xF12CF342CfE295260eFFD2e62C838A13C803f012, WORKER: rig-1, PSW: x, ESM: 0, ALLPOOLS: 0 <br/>
-        ##### FAILOVER-POOL - eu2.eth.icemining.io:4444 <br/>
-        POOL: eu1.eth.icemining.io:4444, WALLET: 0xF12CF342CfE295260eFFD2e62C838A13C803f012, WORKER: rig-1, PSW: x, ESM: 0, ALLPOOLS: 0
-    </code> 
-  </p>
-  <br/>
-  
-  <div class="smallnotebg indentb">
-    <h4>
-      Then just start EthDcrMiner64 executable without parameters:
-    </h4>
-    Windows: <br/>
-    <div class="smallnote code-code">
-          EthDcrMiner64.exe <br/>
-    </div>
-    Linux: <br/>
-    <div class="smallnote code-code">
-          ./ethdcrminer64 <br/>
-    </div>
-  </div>
-  
-  <br/>
-  
-  
-  
+
     
   <h4 class="note note-info text-center">
-    Advanced: Start Mining with <a href="https://github.com/Atrides/eth-proxy" re="nofollow" target="_blank">eth-proxy</a> and your favorite miner-branch (Stratum Mode & Failover)
+    Start Mining with <a href="https://github.com/Atrides/eth-proxy" re="nofollow" target="_blank">eth-proxy</a> and your favorite miner-branch (Stratum Mode)
   </h4>
   <p class="lead indentl">
     Download and unpack eth-proxy 0.0.5
@@ -239,26 +169,14 @@
   
   <div class="smallnotebg indentb">
     <h4>
-      Edit <code>eth-proxy.conf</code> and specify our <code>POOL-NODE's</code> and your <code>WALLET</code>:
+      Edit <code>eth-proxy.conf</code> and specify our <code>POOL_HOST</code>, <code>POOL_PORT</code> and your <code>WALLET</code>:
     </h4>
     <div class="smallnote code-code">
         WALLET = "<strong>&lt;YOUR_ETH_ADDRESS&gt;</strong>"<br/>
 <br/>
         # Main pool<br/>
-        POOL_HOST = "<strong>eu1.eth.icemining.io</strong>"<br/>
-        POOL_PORT = <strong>4444</strong><br/>
-<br/>
-        # Failover pool<br/>
-        POOL_FAILOVER_ENABLE = <strong>True</strong><br/>
-<br/>
-        POOL_HOST_FAILOVER1 = "<strong>eu2.eth.icemining.io</strong>"<br/>
-        POOL_PORT_FAILOVER1 = <strong>4444</strong><br/>
-<br/>
-        # POOL_HOST_FAILOVER2 = "<strong></strong>"<br/>
-        # POOL_PORT_FAILOVER2 = <strong>4444</strong><br/>
-<br/>
-        # POOL_HOST_FAILOVER3 = "<strong></strong>"<br/>
-        # POOL_PORT_FAILOVER3 = <strong>4444</strong><br/>
+        POOL_HOST = "<strong>{{config.StratumHost}}</strong>"<br/>
+        POOL_PORT = "<strong>{{config.StratumPort}}</strong>"<br/>
         <br/>
         # It's useful for individually monitoring and statistic<br/>
         ENABLE_WORKER_ID = <strong>True</strong>
