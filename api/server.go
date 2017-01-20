@@ -217,6 +217,7 @@ func (s *ApiServer) BlocksIndex(w http.ResponseWriter, r *http.Request) {
 		reply["immatureTotal"] = stats["immatureTotal"]
 		reply["candidates"] = stats["candidates"]
 		reply["candidatesTotal"] = stats["candidatesTotal"]
+		reply["paymentsTotal"] = stats["paymentsTotal"]
 		reply["luck"] = stats["luck"]
 	}
 
