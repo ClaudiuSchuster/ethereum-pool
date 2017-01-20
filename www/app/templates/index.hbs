@@ -29,8 +29,9 @@
 
 
 <!-- <h4 class="note note-danger text-center"> Note: </h4> -->
-  
 
+
+    
 <div class="container">
   <div class="stats">
     <h4>Your Stats &amp; Payment History</h4>
@@ -45,188 +46,193 @@
   </div>
   <br/>
   
-  
-  
- 
-  <h4 class="note note-info text-center">
+
+
+<button type="button" class="helpCollapseButton note note-info text-center" data-toggle="collapse" data-target=".genoil-collapse">
     Start Mining with Genoil's Miner (Stratum Mode)
-  </h4>
-  <p class="lead indentl">
-    Download and install / unpack Genoil's Miner 
-     <ul style="list-style-type:square">
-      <li>
-        Windows: <a href="https://github.com/Genoil/cpp-ethereum/tree/master/releases" rel="nofollow" target="_blank">Windows Builds</a>
-      </li>
-      <li>
-        Linux / Source: <a href="https://github.com/Genoil/cpp-ethereum" rel="nofollow" target="_blank">Build Instructions</a>
-      </li>
-      <li>
-        <a href="https://bitcointalk.org/index.php?topic=1368785.0" rel="nofollow" target="_blank"> Bitcointalk Thread</a>
-      </li>
-     </ul> 
-  </p>
+</button>
+<div class="collapse genoil-collapse">
+      <p class="lead indentl">
+        Download and install / unpack Genoil's Miner 
+         <ul style="list-style-type:square">
+          <li>
+            Windows: <a href="https://github.com/Genoil/cpp-ethereum/tree/master/releases" rel="nofollow" target="_blank">Windows Builds</a>
+          </li>
+          <li>
+            Linux / Source: <a href="https://github.com/Genoil/cpp-ethereum" rel="nofollow" target="_blank">Build Instructions</a>
+          </li>
+          <li>
+            <a href="https://bitcointalk.org/index.php?topic=1368785.0" rel="nofollow" target="_blank"> Bitcointalk Thread</a>
+          </li>
+         </ul> 
+      </p>
+      
+      <div class="smallnotebg indentb">
+        <h4>
+          Then start ethminer executable with following command-line parameters:
+        </h4>
+        Windows: <br/>
+        <div class="smallnote code-code">
+              ethminer.exe --farm-recheck 200 -G -SP 1 -S {{config.StratumHost}}:{{config.StratumPort}} -O <strong>&lt;YOUR_ETH_ADDRESS&gt;.&lt;RIG_ID&gt;</strong>
+        </div>
+        Linux: <br/>
+        <div class="smallnote code-code">
+              ./ethminer --farm-recheck 200 -G -SP 1 -S {{config.StratumHost}}:{{config.StratumPort}} -O <strong>&lt;YOUR_ETH_ADDRESS&gt;.&lt;RIG_ID&gt;</strong>
+        </div>
+      </div>
+        
+      <dl class="dl-horizontal indentb">
+        <dt>YOUR_ETH_ADDRESS</dt>
+        <dd>This is your address for payouts, generate one with geth, or mine directly to exchange like
+          <a href="http://poloniex.com" rel="nofollow" target="_blank">Poloniex</a>
+          or <a href="http://bittrex.com" rel="nofollow" target="_blank">Bittrex</a>.<br/>
+          <strong>Example:</strong> <code>0xF12CF342CfE295260eFFD2e62C838A13C803f012</code>
+        </dd>
+        <dt>RIG_ID</dt>
+        <dd>
+          ID of your farm to distinguish it from your other rig. If you have just one rig, feel free to omit this param.
+          This param must be short alphanumeric string with optional dashes and underscores.<br/>
+          <strong>Example:</strong> <code>rig-1</code>
+        </dd>
+      </dl>
+      <p class="indentb">
+        <strong>Full example:</strong>
+        <code>
+            ethminer --farm-recheck 200 -G -SP 1 -S {{config.StratumHost}}:{{config.StratumPort}} -FS eu2.eth.icemining.io:{{config.StratumPort}} -O 0xF12CF342CfE295260eFFD2e62C838A13C803f012.rig-1
+        </code>
+      </p>
+      <br/>
+</div>  
   
-  <div class="smallnotebg indentb">
-    <h4>
-      Then start ethminer executable with following command-line parameters:
-    </h4>
-    Windows: <br/>
-    <div class="smallnote code-code">
-          ethminer.exe --farm-recheck 200 -G -SP 1 -S {{config.StratumHost}}:{{config.StratumPort}} -O <strong>&lt;YOUR_ETH_ADDRESS&gt;.&lt;RIG_ID&gt;</strong>
-    </div>
-    Linux: <br/>
-    <div class="smallnote code-code">
-          ./ethminer --farm-recheck 200 -G -SP 1 -S {{config.StratumHost}}:{{config.StratumPort}} -O <strong>&lt;YOUR_ETH_ADDRESS&gt;.&lt;RIG_ID&gt;</strong>
-    </div>
-  </div>
-    
-  <dl class="dl-horizontal indentb">
-    <dt>YOUR_ETH_ADDRESS</dt>
-    <dd>This is your address for payouts, generate one with geth, or mine directly to exchange like
-      <a href="http://poloniex.com" rel="nofollow" target="_blank">Poloniex</a>
-      or <a href="http://bittrex.com" rel="nofollow" target="_blank">Bittrex</a>.<br/>
-      <strong>Example:</strong> <code>0xF12CF342CfE295260eFFD2e62C838A13C803f012</code>
-    </dd>
-    <dt>RIG_ID</dt>
-    <dd>
-      ID of your farm to distinguish it from your other rig. If you have just one rig, feel free to omit this param.
-      This param must be short alphanumeric string with optional dashes and underscores.<br/>
-      <strong>Example:</strong> <code>rig-1</code>
-    </dd>
-  </dl>
-  <p class="indentb">
-    <strong>Full example:</strong>
-    <code>
-        ethminer --farm-recheck 200 -G -SP 1 -S {{config.StratumHost}}:{{config.StratumPort}} -FS eu2.eth.icemining.io:{{config.StratumPort}} -O 0xF12CF342CfE295260eFFD2e62C838A13C803f012.rig-1
-    </code>
-  </p>
-  <br/>
-  
-  
-  
-  <h4 class="note note-info text-center">
+
+<button type="button" class="helpCollapseButton note note-info text-center" data-toggle="collapse" data-target=".claymore-collapse">
     Start Mining with Claymore's Miner (Stratum Mode)
-  </h4>
-  <p class="lead indentl">
-    Download and install / unpack Claymore's Miner 
-     <ul style="list-style-type:square">
-      <li>
-        <a href="http://bitcointalk.org/index.php?topic=1433925.0" rel="nofollow" target="_blank"> Bitcointalk Thread</a>
-      </li>
-     </ul> 
-  </p>
-  
-  <div class="smallnotebg indentb">
-    <h4>
-      Then start EthDcrMiner64 executable with following command-line parameters:
-    </h4>
-    Windows: <br/>
-    <div class="smallnote code-code">
-          EthDcrMiner64.exe -epool {{config.StratumHost}}:{{config.StratumPort}} -epsw x -ewal <strong>&lt;YOUR_ETH_ADDRESS&gt;</strong> -eworker <strong>&lt;RIG_ID&gt;</strong> <br/>
-    </div>
-    Linux: <br/>
-    <div class="smallnote code-code">
-          ./ethdcrminer64 -epool {{config.StratumHost}}:{{config.StratumPort}} -epsw x -ewal <strong>&lt;YOUR_ETH_ADDRESS&gt;</strong> -eworker <strong>&lt;RIG_ID&gt;</strong> <br/>
-    </div>
-  </div>
+</button>
+<div class="collapse claymore-collapse">
+      <p class="lead indentl">
+        Download and install / unpack Claymore's Miner 
+         <ul style="list-style-type:square">
+          <li>
+            <a href="http://bitcointalk.org/index.php?topic=1433925.0" rel="nofollow" target="_blank"> Bitcointalk Thread</a>
+          </li>
+         </ul> 
+      </p>
+      
+      <div class="smallnotebg indentb">
+        <h4>
+          Then start EthDcrMiner64 executable with following command-line parameters:
+        </h4>
+        Windows: <br/>
+        <div class="smallnote code-code">
+              EthDcrMiner64.exe -epool {{config.StratumHost}}:{{config.StratumPort}} -epsw x -ewal <strong>&lt;YOUR_ETH_ADDRESS&gt;</strong> -eworker <strong>&lt;RIG_ID&gt;</strong> <br/>
+        </div>
+        Linux: <br/>
+        <div class="smallnote code-code">
+              ./ethdcrminer64 -epool {{config.StratumHost}}:{{config.StratumPort}} -epsw x -ewal <strong>&lt;YOUR_ETH_ADDRESS&gt;</strong> -eworker <strong>&lt;RIG_ID&gt;</strong> <br/>
+        </div>
+      </div>
+        
+      <dl class="dl-horizontal indentb">
+        <dt>YOUR_ETH_ADDRESS</dt>
+        <dd>This is your address for payouts, generate one with geth, or mine directly to exchange like
+          <a href="http://poloniex.com" rel="nofollow" target="_blank">Poloniex</a>
+          or <a href="http://bittrex.com" rel="nofollow" target="_blank">Bittrex</a>.<br/>
+          <strong>Example:</strong> <code>0xF12CF342CfE295260eFFD2e62C838A13C803f012</code>
+        </dd>
+        <dt>RIG_ID</dt>
+        <dd>
+          ID of your farm to distinguish it from your other rig. If you have just one rig, feel free to omit this param.
+          This param must be short alphanumeric string with optional dashes and underscores.<br/>
+          <strong>Example:</strong> <code>rig-1</code>
+        </dd>
+      </dl>
+      <p class="indentb">
+        <strong>Full example:</strong>
+        <code>
+            EthDcrMiner64 -epool {{config.StratumHost}}:{{config.StratumPort}} -epsw x -ewal 0xF12CF342CfE295260eFFD2e62C838A13C803f012 -eworker rig-1
+        </code>
+      </p>
+      <br/>
+</div>
     
-  <dl class="dl-horizontal indentb">
-    <dt>YOUR_ETH_ADDRESS</dt>
-    <dd>This is your address for payouts, generate one with geth, or mine directly to exchange like
-      <a href="http://poloniex.com" rel="nofollow" target="_blank">Poloniex</a>
-      or <a href="http://bittrex.com" rel="nofollow" target="_blank">Bittrex</a>.<br/>
-      <strong>Example:</strong> <code>0xF12CF342CfE295260eFFD2e62C838A13C803f012</code>
-    </dd>
-    <dt>RIG_ID</dt>
-    <dd>
-      ID of your farm to distinguish it from your other rig. If you have just one rig, feel free to omit this param.
-      This param must be short alphanumeric string with optional dashes and underscores.<br/>
-      <strong>Example:</strong> <code>rig-1</code>
-    </dd>
-  </dl>
-  <p class="indentb">
-    <strong>Full example:</strong>
-    <code>
-		EthDcrMiner64 -epool {{config.StratumHost}}:{{config.StratumPort}} -epsw x -ewal 0xF12CF342CfE295260eFFD2e62C838A13C803f012 -eworker rig-1
-    </code>
-  </p>
-  <br/>
 
-    
 
-    
-  <h4 class="note note-info text-center">
-    Start Mining with <a href="https://github.com/Atrides/eth-proxy" re="nofollow" target="_blank">eth-proxy</a> and your favorite miner-branch (Stratum Mode)
-  </h4>
-  <p class="lead indentl">
-    Download and unpack eth-proxy 0.0.5
-     <ul style="list-style-type:square">
-      <li>
-        <a href="https://github.com/Atrides/eth-proxy/releases" rel="nofollow" target="_blank">Windows / Linux Builds</a>
-      </li>
-     </ul> 
-  </p>
-  
-  <div class="smallnotebg indentb">
-    <h4>
-      Edit <code>eth-proxy.conf</code> and specify our <code>POOL_HOST</code>, <code>POOL_PORT</code> and your <code>WALLET</code>:
-    </h4>
-    <div class="smallnote code-code">
-        WALLET = "<strong>&lt;YOUR_ETH_ADDRESS&gt;</strong>"<br/>
-<br/>
-        # Main pool<br/>
-        POOL_HOST = "<strong>{{config.StratumHost}}</strong>"<br/>
-        POOL_PORT = "<strong>{{config.StratumPort}}</strong>"<br/>
-        <br/>
-        # It's useful for individually monitoring and statistic<br/>
-        ENABLE_WORKER_ID = <strong>True</strong>
-    </div>
-  </div>
-  
-  <div class="smallnotebg indentb">
-    <h4>
-      Then start proxy executable:
-    </h4>
-    Windows (compiled exe): <br/>
-    <div class="smallnote code-code">
-          eth-proxy.exe
-    </div>
-    Linux: <br/>
-    <div class="smallnote code-code">
-          ./python ./eth-proxy.py
-    </div>
-    <code>Note: On linux you must first install twisted with: apt-get install python-twisted</code>
-  </div>
-  
-  <div class="smallnotebg indentb">
-    <h4>
-      Now you can run your favorite miner-branch on your rigs, pointing to your machine running proxy:
-    </h4>
-    <div class="smallnote code-code">
-        ethminer --farm-recheck 200 -G -F http://<strong>&lt;IP_OF_PROXY&gt;</strong>:8080/<strong>&lt;RIG_ID&gt;</strong>
-    </div>
-  </div>
-    
-  <dl class="dl-horizontal indentb">
-    <dt>YOUR_ETH_ADDRESS</dt>
-    <dd>This is your address for payouts, generate one with geth, or mine directly to exchange like
-      <a href="http://poloniex.com" rel="nofollow" target="_blank">Poloniex</a>
-      or <a href="http://bittrex.com" rel="nofollow" target="_blank">Bittrex</a>.<br/>
-      <strong>Example:</strong> <code>0xF12CF342CfE295260eFFD2e62C838A13C803f012</code>
-    </dd>
-    <dt>RIG_ID</dt>
-    <dd>
-      ID of your farm to distinguish it from your other rig. If you have just one rig, feel free to omit this param.
-      This param must be short alphanumeric string with optional dashes and underscores.<br/>
-      <strong>Example:</strong> <code>rig-1</code>
-    </dd>
-    <dt>IP_OF_PROXY</dt>
-    <dd>
-      The IP-Address of the PC running eth-proxy executable.<br/>
-      <strong>Example:</strong> <code>192.168.1.127</code>
-    </dd>
-  </dl>
-  
+<button type="button" class="helpCollapseButton note note-info text-center" data-toggle="collapse" data-target=".eth-proxy-collapse">
+    Start Mining with eth-proxy and your favorite miner-branch (Stratum Mode)
+</button>
+<div class="collapse eth-proxy-collapse">
+      <p class="lead indentl">
+        Download and unpack eth-proxy 0.0.5
+         <ul style="list-style-type:square">
+          <li>
+            <a href="https://github.com/Atrides/eth-proxy/releases" rel="nofollow" target="_blank">Windows / Linux Builds</a>
+          </li>
+          <li>
+            <a href="https://github.com/Atrides/eth-proxy" re="nofollow" target="_blank">More Info</a>
+          </li>
+         </ul> 
+      </p>
+      
+      <div class="smallnotebg indentb">
+        <h4>
+          Edit <code>eth-proxy.conf</code> and specify our <code>POOL_HOST</code>, <code>POOL_PORT</code> and your <code>WALLET</code>:
+        </h4>
+        <div class="smallnote code-code">
+            WALLET = "<strong>&lt;YOUR_ETH_ADDRESS&gt;</strong>"<br/>
+    <br/>
+            # Main pool<br/>
+            POOL_HOST = "<strong>{{config.StratumHost}}</strong>"<br/>
+            POOL_PORT = "<strong>{{config.StratumPort}}</strong>"<br/>
+            <br/>
+            # It's useful for individually monitoring and statistic<br/>
+            ENABLE_WORKER_ID = <strong>True</strong>
+        </div>
+      </div>
+      
+      <div class="smallnotebg indentb">
+        <h4>
+          Then start proxy executable:
+        </h4>
+        Windows (compiled exe): <br/>
+        <div class="smallnote code-code">
+              eth-proxy.exe
+        </div>
+        Linux: <br/>
+        <div class="smallnote code-code">
+              ./python ./eth-proxy.py
+        </div>
+        <code>Note: On linux you must first install twisted with: apt-get install python-twisted</code>
+      </div>
+      
+      <div class="smallnotebg indentb">
+        <h4>
+          Now you can run your favorite miner-branch on your rigs, pointing to your machine running proxy:
+        </h4>
+        <div class="smallnote code-code">
+            ethminer --farm-recheck 200 -G -F http://<strong>&lt;IP_OF_PROXY&gt;</strong>:8080/<strong>&lt;RIG_ID&gt;</strong>
+        </div>
+      </div>
+        
+      <dl class="dl-horizontal indentb">
+        <dt>YOUR_ETH_ADDRESS</dt>
+        <dd>This is your address for payouts, generate one with geth, or mine directly to exchange like
+          <a href="http://poloniex.com" rel="nofollow" target="_blank">Poloniex</a>
+          or <a href="http://bittrex.com" rel="nofollow" target="_blank">Bittrex</a>.<br/>
+          <strong>Example:</strong> <code>0xF12CF342CfE295260eFFD2e62C838A13C803f012</code>
+        </dd>
+        <dt>RIG_ID</dt>
+        <dd>
+          ID of your farm to distinguish it from your other rig. If you have just one rig, feel free to omit this param.
+          This param must be short alphanumeric string with optional dashes and underscores.<br/>
+          <strong>Example:</strong> <code>rig-1</code>
+        </dd>
+        <dt>IP_OF_PROXY</dt>
+        <dd>
+          The IP-Address of the PC running eth-proxy executable.<br/>
+          <strong>Example:</strong> <code>192.168.1.127</code>
+        </dd>
+      </dl>
+</div>
   
   
   
