@@ -8,11 +8,11 @@
   </td>
   <td>
     {{#if block.uncle}}
-      <a href="https://etherscan.io/uncle/{{block.hash}}" class="hash" rel="nofollow" target="_blank">{{format-dyn block.hash 2 5 63}}</a>
+      <a href="https://etherscan.io/uncle/{{block.hash}}" class="hash" rel="nofollow" target="_blank">{{format-dyn block.hash 2 5 63 ".."}}</a>
     {{else if block.orphan}}
       <span class="label label-danger">Orphan</span>
     {{else}}
-      <a href="https://etherscan.io/block/{{block.hash}}" class="hash" rel="nofollow" target="_blank">{{format-dyn block.hash 2 5 63}}</a>
+      <a href="https://etherscan.io/block/{{block.hash}}" class="hash" rel="nofollow" target="_blank">{{format-dyn block.hash 2 5 63 ".."}}</a>
     {{/if}}
   </td>
   <td>{{format-date-locale block.timestamp}}</td>
