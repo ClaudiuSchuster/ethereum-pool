@@ -1,4 +1,4 @@
-## iceming - Ethereum Mining Pool
+## icemining - Ethereum Mining Pool
 
 ![Pool Home](https://cloud.githubusercontent.com/assets/25005466/22174214/1843790c-dfd9-11e6-9cee-8b7647f19100.PNG)
 
