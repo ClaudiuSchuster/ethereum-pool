@@ -10,7 +10,7 @@
     </thead>
     <tbody>
       {{#each model.miners as |m|}}
-      <tr class="{{if m.offline "warning"}}">
+      <tr class="{{if m.offline "MinerWarning"}}">
         <td>{{#link-to 'account' m.login class='hash'}}{{format-addr m.login}}{{/link-to}}</td>
         <td>{{format-hashrate m.hr}}</td>
         <td>{{format-date-locale m.lastBeat}}</td>
