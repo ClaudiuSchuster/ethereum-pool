@@ -1,2 +1,4 @@
 - Dynamic format tx / block hash
 - Dynamic format address
+- Change Algorithm from PROP to PPLNS
+- Test other Stratum Implementations
