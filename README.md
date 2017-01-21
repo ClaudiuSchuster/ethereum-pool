@@ -2,7 +2,7 @@
 
 ![Pool Home](https://cloud.githubusercontent.com/assets/25005466/22174214/1843790c-dfd9-11e6-9cee-8b7647f19100.PNG)
 
-[![Join the chat at https://gitter.im/sammy007/open-ethereum-pool](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/sammy007/open-ethereum-pool?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Build Status](https://travis-ci.org/sammy007/open-ethereum-pool.svg?branch=develop)](https://travis-ci.org/sammy007/open-ethereum-pool)
+[![Join the chat at https://gitter.im/sammy007/open-ethereum-pool](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/sammy007/open-ethereum-pool?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) 
 [List Of Open Ethereum Pools](https://github.com/sammy007/open-ethereum-pool/wiki/List-Of-Open-Pools)
 
 ### Features
