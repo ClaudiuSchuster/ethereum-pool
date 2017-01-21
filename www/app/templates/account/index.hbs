@@ -1,7 +1,7 @@
 <div class="container">
   {{#if model.workers}}
   <h4>Your Workers</h4>
-  <table class="table table-condensed table-striped">
+  <table id="miners" class="table table-condensed table-striped">
     <thead>
       <tr>
         <th>ID</th>
@@ -12,7 +12,7 @@
     </thead>
     <tbody>
       {{#each-in model.workers as |k v|}}
-        <tr class="{{if v.offline "warning" "success"}}">
+        <tr class="{{if v.offline "MinerWarning"}}">
           <td>{{k}}</td>
           <td>{{format-hashrate v.hr}}</td>
           <td>{{format-hashrate v.hr2}}</td>
