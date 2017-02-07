@@ -23,6 +23,7 @@
         <div><i class="fa fa-clock-o"></i> Last Mined Block: <span>{{format-relative (seconds-to-ms stats.model.stats.lastBlockFound)}}</span></div>
         {{/if}}
         <div><i class="fa fa-clock-o"></i> Current Round Variance: <span>{{format-number stats.roundVariance style='percent'}}</span></div>
+	<div><i class="fa fa-clock-o"></i> Current Round Exponent: <span>{{format-number stats.roundExponent}}</span></div>
       </div>
     </div>
   </div>
