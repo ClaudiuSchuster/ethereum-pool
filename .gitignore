@@ -5,6 +5,7 @@ payout.json
 unlocker.json
 api.json
 pool.json
+pool_EU2old_.json
 
 /build/_workspace/
 /build/bin/
