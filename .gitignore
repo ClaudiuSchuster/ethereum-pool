@@ -5,6 +5,11 @@ payout.json
 unlocker.json
 api.json
 pool.json
+payoutETC.json
+unlockerETC.json
+apiETC.json
+poolETC.json
+
 
 /build/_workspace/
 /build/bin/
