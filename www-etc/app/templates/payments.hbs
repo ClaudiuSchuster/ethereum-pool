@@ -1,0 +1,30 @@
+<div class="container" style="margin-top:50px;">
+  {{#if model.payments}}
+  <table class="table table-condensed table-striped">
+    <thead>
+      <tr>
+        <th>Time</th>
+        <th>Amount</th>
+        <th>Address</th>
+        <th>Tx ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each model.payments as |tx|}}
+        <tr>
+          <td>{{format-date-locale tx.timestamp}}</td>
+          <td>{{format-number tx.formatAmount}}</td>
+          <td>
+            <a href="https://etherscan.io/address/{{tx.address}}" class="hash" rel="nofollow" target="_blank">{{format-addr tx.address}}</a>
+          </td>
+          <td>
+            <a href="https://etherscan.io/tx/{{tx.tx}}" class="hash" rel="nofollow" target="_blank">{{format-tx tx.tx}}</a>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  {{else}}
+  <h3>No payouts yet</h3>
+  {{/if}}
+</div>
