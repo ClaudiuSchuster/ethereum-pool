@@ -6,6 +6,10 @@ unlocker.json
 api.json
 pool.json
 pool_EU2old_.json
+payoutETC.json
+unlockerETC.json
+apiETC.json
+poolETC.json
 
 /build/_workspace/
 /build/bin/
